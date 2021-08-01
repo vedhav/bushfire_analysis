@@ -70,7 +70,10 @@ ui <- bs4DashPage(
       fluidRow(
         column(
           12, align = "center",
-          extendShinyjs(text = "shinyjs.resetClick = function() { Shiny.onInputChange('.clientValue-plotly_click-A', 'null'); }"),
+          extendShinyjs(
+            text = "shinyjs.resetClick = function() { Shiny.onInputChange('.clientValue-plotly_click-A', 'null'); }",
+            functions = c("resetClick")
+          ),
           plotlyOutput("number_of_fires", height = "32vh")
         ),
         column(12, hr()),
